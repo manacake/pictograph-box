@@ -1,5 +1,6 @@
 env
 *.pyc
 *.py.swp
+*.html.swp
 db.sqlite3
 blogengine/static/blogengine/bower_components
