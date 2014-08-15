@@ -1,0 +1,22 @@
+{
+  "name": "blog",
+  "version": "0.0.0",
+  "authors": [
+    "Tina Zhao <tinayzhao@gmail.com>"
+  ],
+  "description": "tina's django blog",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "blogengine/static/blogengine/bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "html5-boilerplate": "~4.3.0"
+  }
+}
