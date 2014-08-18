@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'django_blog.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'', include('blogengine.urls')),
+    url(r'^admin/', include(admin.site.urls)), 
+    url(r'', include('blogengine.urls')), # Blog urls
+    url(r'', include('django.contrib.flatpages.urls')), # Flat pages
 )
