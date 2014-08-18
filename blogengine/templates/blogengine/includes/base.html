@@ -37,14 +37,18 @@
         <div class="navbar navbar-static-top navbar-inverse">
             <div class="navbar-inner">
                 <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <a class="brand" href="/">Pictograph Box</a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav pull-left">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                            <span class="sr-only">Toggle Navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">Pictograph Box</a>
+                    </div> <!-- end of navbar-header -->
+
+                    <div class="nav-collapse collapse" id="main-nav">
+                        <ul class="nav navbar-nav navbar-right">
                             <li><a href="#">About</a></li>
                             <li class="divider-vertical"></li>
                             <li><a href="#">Contact</a></li>
