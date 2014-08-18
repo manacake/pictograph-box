@@ -93,7 +93,7 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 # For Continuous Integration
 INSTALLED_APPS += ('django_jenkins',)
 JENKINS_TASKS = (
-        'django_jenkins.tasks.run_pylint', # used to check code quality
-        'django_jenkins.tasks.with_coverage', # checks code coverage
+    'django_jenkins.tasks.run_pylint', # used to check code quality
+    'django_jenkins.tasks.with_coverage', # checks code coverage
 )
 PROJECT_APPS = ['blogengine'] # only test this app
