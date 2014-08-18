@@ -38,6 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'blogengine',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -77,6 +79,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+# For sites framework
+SITE_ID = 1
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
