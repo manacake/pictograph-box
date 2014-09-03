@@ -1,7 +1,6 @@
 env/
 *.pyc
-*.py.swp
-*.html.swp
+*.swp
 db.sqlite3
 blogengine/static/blogengine/bower_components/
 django_blog/sk.py
