@@ -6,4 +6,4 @@ reports/
 htmlcov/
 .coverage
 .env
-*/django_blog/local.py
+local.py

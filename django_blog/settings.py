@@ -110,3 +110,10 @@ JENKINS_TASKS = (
     'django_jenkins.tasks.with_coverage', # checks code coverage
 )
 PROJECT_APPS = ['blogengine'] # only test this app
+
+
+# For local production
+try:
+    from local import *
+except ImportError:
+    pass
