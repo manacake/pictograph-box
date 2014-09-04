@@ -5,4 +5,4 @@ db.sqlite3
 reports/
 htmlcov/
 .coverage
-*/django_blog/sk.py
+.env
