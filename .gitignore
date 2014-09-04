@@ -6,4 +6,4 @@ reports/
 htmlcov/
 .coverage
 .env
-travis.log
+*/django_blog/local.py
