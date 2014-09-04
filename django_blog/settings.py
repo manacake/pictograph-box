@@ -10,7 +10,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -22,7 +22,7 @@ SECRET_KEY = sk.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-TEMPLATE_DEBUG = False
+TEMPLATE_DEBUG = True
 
 
 # Application definition
@@ -99,7 +99,9 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 STATIC_ROOT = 'staticfiles'
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+# collectstatic will already collect static files from installed apps
+# The below line is used if there are static files not tied to an app (floating around)
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 
 # For Continuous Integration
