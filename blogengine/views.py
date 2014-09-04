@@ -27,6 +27,8 @@ class CategoryListView(ListView):
         return context
 
 class TagListView(ListView):
+    template_name = 'blogengine/tag_post_list.html'
+
     def get_queryset(self):
         slug = self.kwargs['slug']
         try:
@@ -34,6 +36,15 @@ class TagListView(ListView):
             return tag.post_set.all()
         except Tag.DoesNotExist:
             return Post.objects.none()
+
+    def get_context_data(self, **kwargs):
+        context = super(TagListView, self).get_context_data(**kwargs)
+        slug = self.kwargs['slug']
+        try:
+            context['tag'] = Tag.objects.get(slug=slug)
+        except Tag.DoesNotExist:
+            context['tag'] = None
+        return context
 
 class PostsFeed(Feed):
     title = "RSS feed - posts"
@@ -68,3 +79,24 @@ class CategoryPostsFeed(PostsFeed):
 
     def items(self, obj):
         return Post.objects.filter(category=obj).order_by('-pub_date')
+
+class TagPostsFeed(PostsFeed):
+    def get_object(self, request, slug):
+        return get_object_or_404(Tag, slug=slug)
+
+    def title(self, obj):
+        return "RSS feed - blog posts tagged  %s" % obj.name
+
+    def link(self, obj):
+        return obj.get_absolute_url()
+
+    def description(self, obj):
+        return "RSS feed - blog posts tagged %s" % obj.name
+
+    def items(self, obj):
+        # Remember tags use a many-to-many relationship
+        try: 
+            tag = Tag.objects.get(slug=obj.slug)
+            return tag.post_set.all()
+        except Tag.DoesNotExist:
+            return Post.objects.none()
