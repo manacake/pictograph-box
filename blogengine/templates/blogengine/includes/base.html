@@ -57,6 +57,13 @@
                         <li><a href="{{ flatpage.url }}">{{ flatpage.title }}</a></li>
                         {% endfor %}
                         <li><a href="/feeds/posts/">RSS</a></li>
+
+                        <form action="/search" method="GET" class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" name="q" placeholder="Search..." class="form-control"></input>
+                            </div>
+                            <button type="submit" class="btn btn-default">Go</button>
+                        </form>
                     </ul>
                 </div>
             </div> <!-- end of nav container -->
