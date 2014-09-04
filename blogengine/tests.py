@@ -5,7 +5,7 @@ from django.test import TestCase, LiveServerTestCase, Client
 from django.utils import timezone
 from blogengine.models import Post, Category, Tag
 import feedparser
-import markdown
+import markdown2 as markdown
 
 class PostTest(TestCase):
 
