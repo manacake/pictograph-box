@@ -116,6 +116,7 @@ PROJECT_APPS = ['blogengine'] # only test this app
 
 
 # Configure Memcached to cache on Heroku
+# https://docs.djangoproject.com/en/1.6/topics/cache/#memcached
 def get_cache():
     try:
         os.environ['MEMCACHE_SERVERS'] = os.environ['MEMCACHIER_SERVERS'].replace(',', ';')
@@ -138,9 +139,9 @@ def get_cache():
 
 # Use per-site cache to cache all the site content
 CACHES = get_cache()
-CACHE_MIDDLEWARE_ALIAS = 'default'
-CACHE_MIDDLEWARE_SECONDS = 300
-CACHE_MIDDLEWARE_KEY_PREFIX = ''
+CACHE_MIDDLEWARE_ALIAS = 'default' # cache alias to use for storage
+CACHE_MIDDLEWARE_SECONDS = 300 # num of seconds each page should be cached
+CACHE_MIDDLEWARE_KEY_PREFIX = '' # name if cache is shared across multiple sites
 
 
 # For local production
