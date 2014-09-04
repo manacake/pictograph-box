@@ -3,6 +3,9 @@ python:
 - "2.7"
 env:
     secure: "lSdNHGSTAQnDzl2tIlJ7XY0rLb7FZ4TUWVcsjrEIE3d6Hst5P0qmEriUJf5ILLowc/HJChVlO+g8Hae+Ulwu67PaPetwMMsxYLou5ZlhcjwgslJS5U6HcGJpuc1eabL1ucUpqMg81tr3tySLtABQD/gFfYPN3BARue3SkWFCQ/U="
+services: memcached
+before_install:
+    - sudo apt-get install -y libmemcached-dev
 # install dependencies
 install: "pip install -r requirements.txt"
 # run tests

@@ -1,6 +1,8 @@
 from django.db import models
+from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
+from django.core.cache import cache
 from django.utils.text import slugify
 
 class Tag(models.Model):
@@ -57,3 +59,11 @@ class Post(models.Model):
 
     class Meta:
         ordering = ["-pub_date"]
+
+# Define signals
+def new_post(sender, instance, created, **kwargs):
+    '''Gets called when new post is created or saved'''
+    cache.clear()
+
+# Setup signals: connect to post save signal
+post_save.connect(new_post, sender=Post)
