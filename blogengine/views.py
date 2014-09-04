@@ -1,7 +1,10 @@
 from django.contrib.syndication.views import Feed
 from django.shortcuts import render
 from django.views.generic import ListView
+from django.utils.encoding import force_unicode
+from django.utils.safestring import mark_safe
 from blogengine.models import Category, Post, Tag
+import markdown2
 
 class CategoryListView(ListView):
     def get_queryset(self):
@@ -33,4 +36,8 @@ class PostsFeed(Feed):
         return item.title
 
     def item_description(self, item):
-        return item.text
+        extras = ['fenced-code-blocks']
+        # Render description as markdown
+        content = mark_safe(markdown2.markdown(force_unicode(item.text),
+                                               extras = extras))
+        return content
