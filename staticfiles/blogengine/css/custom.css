@@ -15,9 +15,12 @@ body {
 }
 
 .navbar-header img {
-	width: 135px;
-	height: 32px;
-	margin-top:0.5em;
+	margin-top: -0.3em;
+}
+
+.navbar-brand {
+	height: 60px;
+	padding: 14px;
 }
 
 .form-control,
