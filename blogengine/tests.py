@@ -758,6 +758,7 @@ class FlatPageViewTest(BaseAcceptanceTest):
         self.assertTrue('About me' in response.content)
         self.assertTrue('All about me' in response.content)
 
+
 class SearchViewTest(BaseAcceptanceTest):
     def test_search(self):
         post = PostFactory() # Create a post
@@ -786,6 +787,18 @@ class SearchViewTest(BaseAcceptanceTest):
 
         # Check the second post is contained in the results
         self.assertTrue('My second post' in response.content)
+
+    def test_failing_search(self):
+        # Search for something that is not present
+        response = self.client.get('/search?q=iamerror')
+        self.assertEquals(response.status_code, 200)
+        self.assertTrue('No posts found' in response.content)
+
+        # Try to get nonexistent second page
+        response = self.client.get('/search?q=iamerror&page=2')
+        self.assertEquals(response.status_code, 200)
+        self.assertTrue('No posts found' in response.content)
+
 
 class SitemapTest(BaseAcceptanceTest):
     def test_sitemap(self):
