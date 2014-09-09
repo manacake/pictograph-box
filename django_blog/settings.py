@@ -94,7 +94,7 @@ USE_L10N = True
 USE_TZ = True
 
 # For sites framework
-SITE_ID = 2
+SITE_ID = 1
 
 
 # Static files (CSS, JavaScript, Images)
