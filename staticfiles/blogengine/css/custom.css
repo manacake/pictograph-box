@@ -1,5 +1,13 @@
 body {
-	padding-top: 70px;
+	padding-top: 90px;
+}
+
+.container {
+	margin-top: 15px;
+}
+
+.navbar {
+	min-height: 80px;
 }
 
 .navbar-default {
@@ -12,6 +20,11 @@ body {
 	margin-top:0.5em;
 }
 
+.form-control,
+.input-group-btn {
+	opacity: 0.7;
+}
+
 .post h1 {
 	font-size: 22px;
 	color: #19ad5e;
@@ -21,7 +34,7 @@ body {
 	font-size: 16px;
 	margin-top: -5px;
 	border-bottom: 1px solid #ddd;
-	padding-bottom: 1em;
+	padding-bottom: 0.7em;
 	color: #19ad5e;
 	opacity: 0.7;
 }
@@ -38,7 +51,7 @@ body {
 }
 
 .col-md-12.divider {
-	margin-bottom: 2.5em;
+	margin-bottom: 3em;
 }
 
 .label-success {
@@ -47,6 +60,27 @@ body {
 
 .label-success:hover {
 	opacity: 0.9;
+}
+
+.pagination > li > a {
+	color: #19ad5e;
+	font-weight: bold;
+}
+
+.pagination > li > a:hover,
+.pagination > li > a:focus,
+.pagination > li > a:active {
+	background-color: #19ad5e;
+	color: #fff;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.pagination > .active > a:focus,
+.pagination > .active > a:active {
+	background-color: #19ad5e;
+	border-color: #ddd;
+	font-weight: bold;
 }
 
 .previous a,
