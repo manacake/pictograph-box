@@ -189,11 +189,8 @@ class AdminTest(BaseAcceptanceTest):
         self.assertTrue('Log in' in response.content)
 
     def test_create_post(self):
-        # Create the category
-        category = CategoryFactory()
-
-        # Create the tag
-        tag = TagFactory()
+        category = CategoryFactory() # Create the category
+        tag = TagFactory() # Create the tag
            
         # Log in
         self.client.login(username='zelda', password='password')
@@ -306,8 +303,7 @@ class AdminTest(BaseAcceptanceTest):
         self.assertEquals(len(all_categories), 1)
 
     def test_edit_category(self):
-        # Create the category
-        category = CategoryFactory()
+        category = CategoryFactory() # Create the category
 
         # Log in
         self.client.login(username='zelda', password="password")
@@ -330,8 +326,7 @@ class AdminTest(BaseAcceptanceTest):
         self.assertEquals(only_category.description, 'The Perl programming language')
         
     def test_delete_category(self):
-        # Create the category
-        category = CategoryFactory()
+        category = CategoryFactory() # Create the category
 
         # Log in
         self.client.login(username='zelda', password="password")
@@ -374,8 +369,7 @@ class AdminTest(BaseAcceptanceTest):
         self.assertEquals(len(all_tags), 1)
 
     def test_edit_tag(self):
-        # Create the tag
-        tag = TagFactory()
+        tag = TagFactory() # Create the tag
 
         # Log in
         self.client.login(username='zelda', password="password")
@@ -398,8 +392,7 @@ class AdminTest(BaseAcceptanceTest):
         self.assertEquals(only_tag.description, 'The Perl programming language')
     
     def test_delete_tag(self):
-        # Create the tag
-        tag = TagFactory()
+        tag = TagFactory() # Create the tag
 
         # Log in
         self.client.login(username='zelda', password="password")
@@ -418,8 +411,7 @@ class AdminTest(BaseAcceptanceTest):
         self.assertEquals(len(all_tags), 0)
 
     def test_create_post_without_tag(self):
-        # Create the category
-        category = CategoryFactory()
+        category = CategoryFactory() # Create the category
 
         # Log in
         self.client.login(username='zelda', password="password")
@@ -738,8 +730,7 @@ class FeedTest(BaseAcceptanceTest):
         
 class FlatPageViewTest(BaseAcceptanceTest):
     def test_create_flat_page(self):
-        # Create flat page
-        page = FlatPageFactory()
+        page = FlatPageFactory() # Create flat page
 
         # Add the site
         page.sites.add(Site.objects.all()[0])
@@ -795,3 +786,18 @@ class SearchViewTest(BaseAcceptanceTest):
 
         # Check the second post is contained in the results
         self.assertTrue('My second post' in response.content)
+
+class SitemapTest(BaseAcceptanceTest):
+    def test_sitemap(self):
+        post = PostFactory() # Create a post
+        page = FlatPageFactory() # Create a flat page
+
+        # Get sitemap
+        response = self.client.get('/sitemap.xml')
+        self.assertEquals(response.status_code, 200)
+
+        # Check post is present in sitemap
+        self.assertTrue('my-first-post' in response.content)
+
+        # Check page is present in sitemap
+        self.assertTrue('/about/' in response.content)
