@@ -1,3 +1,63 @@
+body {
+	padding-top: 70px;
+}
+
+.navbar-default {
+	background-image: url(http://manacakery.net/pb/img/bg.png);
+}
+
+.navbar-header img {
+	width: 135px;
+	height: 32px;
+	margin-top:0.5em;
+}
+
+.post h1 {
+	font-size: 22px;
+	color: #19ad5e;
+}
+
+.post h3 {
+	font-size: 16px;
+	margin-top: -5px;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 1em;
+	color: #19ad5e;
+	opacity: 0.7;
+}
+
+.post a {
+	color: #19ad5e;
+}
+
+.col-md-12 a:hover,
+.col-md-12 a:focus,
+.col-md-12 a:active {
+	opacity: 0.8;
+	text-decoration: none;
+}
+
+.col-md-12.divider {
+	margin-bottom: 2.5em;
+}
+
+.label-success {
+	background-color: #19ad5e;
+}
+
+.label-success:hover {
+	opacity: 0.9;
+}
+
+.previous a,
+.next a {
+	color: #19ad5e;
+}
+
+.alert-success a {
+	color: #19ad5e;
+}
+
 div.codehilite pre {
 	background-color: #fdf6e3;
 }

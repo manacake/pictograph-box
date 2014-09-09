@@ -9,11 +9,10 @@
         <title>{% block title %}Pictograph Box{% endblock %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="alternate" type="application/rss+xml" title="Blog posts" href="/feeds/posts/" >
-
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="alternate" type="application/rss+xml" title="Blog posts" href="/feeds/posts/">
         
         {% load staticfiles %}
+        <link rel="icon" type="image/png" href="{% static 'blogengine/bower_components/html5-boilerplate/favicon.png' %}">
         <link rel="stylesheet" href="{% static 'blogengine/bower_components/html5-boilerplate/css/normalize.css' %}">
         <link rel="stylesheet" href="{% static 'blogengine/bower_components/html5-boilerplate/css/main.css' %}">
         <link rel="stylesheet" href="{% static 'blogengine/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
@@ -38,7 +37,7 @@
             }(document, 'script', 'facebook-jssdk'));
         </script>
         
-        <div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+        <div class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
@@ -47,7 +46,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{% url 'blogengine:index' %}"><span class="glyphicon glyphicon-camera"></span> Pictograph Box</a>
+                    <a href="{% url 'blogengine:index' %}"><img src="http://manacakery.net/pb/img/logo.png" class="hidden-xs" /></a>
+                    <a class="navbar-brand visible-xs-inline" href="{% url 'blogengine:index' %}"><span class="glyphicon glyphicon-camera"></span> Pictograph Box</a>
                 </div> <!-- end of navbar-header -->
 
                 <div class="collapse navbar-collapse" id="main-nav">
@@ -75,12 +75,6 @@
 	            {% block content %}{% endblock %}
 	        </div>
 	    </div>
-
-        <footer class="container">
-        	<div class="row">
-            	<p><small>Copyright &copy; {% now "Y" %}</small></p>
-            </div>
-        </footer>
 
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script>window.jQuery || document.write('<script src="{% static 'blogengine/bower_components/html5-boilerplate/js/vendor/jquery-1.10.2.min.js' %}"><\/script>')</script>

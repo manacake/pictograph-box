@@ -3,9 +3,10 @@
     {% load custom_markdown %}
 
     {% block content %}
-        <div class="post">
-        <h1>{{ flatpage.title }}</h1>
-        {{ flatpage.content|custom_markdown }}
+
+        <div class="post col-md-12">
+        	<h1>{{ flatpage.title }}</h1>
+        	{{ flatpage.content|custom_markdown }}
         </div>
 
     {% endblock %}

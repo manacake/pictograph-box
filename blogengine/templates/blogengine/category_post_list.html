@@ -42,6 +42,8 @@
             {% endif %}
         </ul>
 
-        <a href="/feeds/posts/category/{{ category.slug }}/">RSS feed for category {{ category.name }}</a>
+        <div class="alert alert-success">
+            <a href="/feeds/posts/category/{{ category.slug }}/">RSS feed for category: {{ category.name }}</a>
+        </div>
 
     {% endblock %}
