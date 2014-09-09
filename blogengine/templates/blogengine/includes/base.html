@@ -9,6 +9,7 @@
         <title>{% block title %}Pictograph Box{% endblock %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="alternate" type="application/rss+xml" title="Blog posts" href="/feeds/posts/" >
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         
@@ -46,7 +47,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-camera"></span> Pictograph Box</a>
+                    <a class="navbar-brand" href="{% url 'blogengine:index' %}"><span class="glyphicon glyphicon-camera"></span> Pictograph Box</a>
                 </div> <!-- end of navbar-header -->
 
                 <div class="collapse navbar-collapse" id="main-nav">
@@ -62,7 +63,7 @@
                             <div class="form-group">
                                 <input type="text" name="q" placeholder="Search..." class="form-control"></input>
                             </div>
-                            <button type="submit" class="btn btn-default">Go</button>
+                            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
                         </form>
                     </ul>
                 </div>
