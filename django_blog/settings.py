@@ -58,6 +58,8 @@ ROOT_URLCONF = 'django_blog.urls'
 
 WSGI_APPLICATION = 'django_blog.wsgi.application'
 
+# Missing setting from django-debug-toolbar
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases

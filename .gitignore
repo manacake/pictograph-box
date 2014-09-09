@@ -7,3 +7,4 @@ htmlcov/
 .coverage
 .env
 local.py
+node_modules/
